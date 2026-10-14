@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARSHOP'BANJARMASIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .glass-card-hover:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .animate-blob {
+            animation: pulse-slow 8s infinite ease-in-out;
+        }
+        @keyframes page-enter {
+            from { opacity: 0; transform: translateY(18px) scale(0.985); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes item-enter {
+            from { opacity: 0; translate: 0 12px; }
+            to { opacity: 1; translate: 0 0; }
+        }
+        .page-enter {
+            animation: page-enter 700ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+        }
+        .service-list > div {
+            animation: item-enter 550ms ease-out both;
+        }
+        .service-list > div:nth-child(1) { animation-delay: 180ms; }
+        .service-list > div:nth-child(2) { animation-delay: 260ms; }
+        .service-list > div:nth-child(3) { animation-delay: 340ms; }
+        .service-list > div:nth-child(4) { animation-delay: 420ms; }
+        .service-list > div:nth-child(5) { animation-delay: 500ms; }
+        @media (prefers-reduced-motion: reduce) {
+            .page-enter,
+            .service-list > div {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans relative overflow-x-hidden flex items-center justify-center p-4 sm:p-6 md:p-10">
+
+    <!-- Background Ambient Glow Shapes -->
+    <div class="absolute top-10 left-10 w-72 h-72 bg-purple-600 rounded-full filter blur-[120px] opacity-40 animate-blob"></div>
+    <div class="absolute bottom-10 right-10 w-80 h-80 bg-blue-600 rounded-full filter blur-[140px] opacity-40 animate-blob" style="animation-delay: 3s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-600 rounded-full filter blur-[160px] opacity-30 animate-blob" style="animation-delay: 5s;"></div>
+
+    <main class="page-enter relative z-10 w-full max-w-2xl glass-card rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-2xl">
+        
+        <!-- Header / Profil Usaha -->
+        <div class="text-center mb-8">
+            <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 rounded-full p-1 bg-gradient-to-tr from-purple-500 to-cyan-400 shadow-xl">
+                <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center overflow-hidden">
+                    <i class="fa-solid fa-screwdriver-wrench text-3xl sm:text-4xl text-cyan-400"></i>
+                </div>
+            </div>
+            
+            <span class="inline-block px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold rounded-full mb-2 tracking-widest uppercase shadow-sm">
+                EST 2020
+            </span>
+            
+            <h1 id="business-name" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-1">
+                ARSHOP'BANJARMASIN
+            </h1>
+            <p id="business-type" class="text-cyan-400 font-medium text-sm sm:text-base uppercase tracking-wider mb-3">
+                Pusat Servis & Solusi Elektronik Digital
+            </p>
+            <p id="business-address" class="text-slate-300 text-xs sm:text-sm max-w-md mx-auto flex items-center justify-center gap-2">
+                <i class="fa-solid fa-location-dot text-rose-400"></i> Jl Simpang Bali 1, Gg Telerama RT/RW 08 No 23, Antasan Besar, Kec. Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan 70123
+            </p>
+            <a href="https://maps.app.goo.gl/XGoisk5ZNwzGif9L6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-3 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>Buka di Google Maps</span>
+            </a>
+        </div>
+
+        <div class="mb-8">
+            <h2 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4 text-center">
+                <i class="fa-solid fa-list-check text-purple-400 mr-1"></i> Layanan Unggulan Kami
+            </h2>
+            
+            <div class="service-list grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Layanan 1 -->
+                <div class="glass-card glass-card-hover p-3.5 rounded-2xl flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300 shrink-0">
+                        <i class="fa-solid fa-tv text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-white">Perbaikan Dan Unlock STB</h3>
+                        <p class="text-xs text-slate-400">Set Top Box normal & custom</p>
+                    </div>
+                </div>
+
+                <!-- Layanan 2 -->
+                <div class="glass-card glass-card-hover p-3.5 rounded-2xl flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-300 shrink-0">
+                        <i class="fa-solid fa-signal text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-white">Memperkuat Sinyal</h3>
+                        <p class="text-xs text-slate-400">Optimasi jaringan & booster</p>
+                    </div>
+                </div>
+
+                <!-- Layanan 3 -->
+                <div class="glass-card glass-card-hover p-3.5 rounded-2xl flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-300 shrink-0">
+                        <i class="fa-solid fa-laptop text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-white">Perbaikan Komputer</h3>
+                        <p class="text-xs text-slate-400">PC, Laptop, & Software</p>
+                    </div>
+                </div>
+
+                <!-- Layanan 4 -->
+                <div class="glass-card glass-card-hover p-3.5 rounded-2xl flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-300 shrink-0">
+                        <i class="fa-solid fa-video text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-white">Pemasangan CCTV</h3>
+                        <p class="text-xs text-slate-400">Instalasi & setting online</p>
+                    </div>
+                </div>
+
+                <!-- Layanan 5 -->
+                <div class="glass-card glass-card-hover p-3.5 rounded-2xl flex items-center gap-3.5 sm:col-span-2">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-300 shrink-0">
+                        <i class="fa-solid fa-film text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-white">Pengisian Lagu & Film</h3>
+                        <p class="text-xs text-slate-400">Update flashdisk, harddisk, & memori</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-3">
+            <a href="https://wa.me/6282274464654?text=Halo,%20saya%20ingin%20bertanya%20mengenai%20jasa%20servis." target="_blank" rel="noopener noreferrer" 
+               class="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold py-3.5 px-6 rounded-2xl shadow-lg transition-all duration-300 transform active:scale-98">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Hubungi via WhatsApp</span>
+            </a>
+
+            <div class="grid grid-cols-2 gap-3">
+                <a href="https://instagram.com/@arshop.banjarmasin" target="_blank" rel="noopener noreferrer"
+                   class="glass-card glass-card-hover flex items-center justify-center gap-2.5 py-3 px-4 rounded-2xl text-sm font-medium text-slate-200">
+                    <i class="fa-brands fa-instagram text-pink-400 text-lg"></i>
+                    <span>Instagram</span>
+                </a>
+
+                <a href="https://tiktok.com/@arshop.banjarmasin" target="_blank" rel="noopener noreferrer"
+                   class="glass-card glass-card-hover flex items-center justify-center gap-2.5 py-3 px-4 rounded-2xl text-sm font-medium text-slate-200">
+                    <i class="fa-brands fa-tiktok text-cyan-300 text-lg"></i>
+                    <span>TikTok</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center text-xs text-slate-500">
+       ARSHOP'BANJARMASIN
+        </div>
+
+    </main>
+
+</body>
+</html>
